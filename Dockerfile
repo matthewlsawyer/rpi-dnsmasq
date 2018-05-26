@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian
 
-RUN apt-get update
-RUN apt-get -q -y install dnsmasq
+RUN apt-get -q update \
+    && apt-get -qy install dnsmasq
 ADD ./etc/ /etc
 CMD dnsmasq -k
 
